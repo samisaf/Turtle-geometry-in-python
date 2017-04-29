@@ -4,7 +4,6 @@
 @note: adapted from Michele Vallisneri, https://www.lynda.com/Python-tutorials/Python-Programming-Efficiently
 """
 
-
 from collections import namedtuple
 from math import sin, cos, pi, ceil
 import matplotlib; import matplotlib.pyplot as plt; import matplotlib.animation as anim
@@ -14,7 +13,7 @@ Point = namedtuple('Point', 'x y')
 degree = pi / 180.0 # conversion between degress and radians
 
 class Turtle(object):
-    def __init__(self, terrarium, color = 'blue'):
+    def __init__(self, terrarium, color='blue'):
         self.pos = Point(0, 0)
         self.angle = 0
         self.pen = True
@@ -28,25 +27,32 @@ class Turtle(object):
             line = plt.Line2D((self.pos.x, newx), (self.pos.y, newy))
             self.axes.add_line(line)
         self.pos = Point(newx, newy)
+        return self
 
     def backward(self, distance):
         self.forward(-distance)
+        return self
 
     def left(self, angle):
         self.angle = (self.angle + angle) % 360
+        return self
 
     def right(self, angle):
         self.left(-angle)
+        return self
 
     def pendown(self):
         self.pen = True
+        return self
 
     def penup(self):
         self.pen = False
+        return self
 
     def point(self, width = 2):
         circle = plt.Circle(self.pos, width, color = self.color)
         self.axes.add_patch(circle)
+        return self
 
 class Terrarium(object):
     def __init__(self, size=3, animate=False, duration=2):
