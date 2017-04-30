@@ -13,9 +13,9 @@ Point = namedtuple('Point', 'x y')
 degree = pi / 180.0 # conversion between degress and radians
 
 class Turtle(object):
-    def __init__(self, terrarium, color='blue'):
+    def __init__(self, terrarium, color='navy'):
         self.pos = Point(0, 0)
-        self.angle = 0
+        self.angle = 90
         self.pen = True
         self.axes = terrarium.axes
         self.color = color
