@@ -24,7 +24,7 @@ class Turtle(object):
         newx = self.pos.x + distance * cos(self.angle * degree)
         newy = self.pos.y + distance * sin(self.angle * degree)       
         if self.pen: 
-            line = plt.Line2D((self.pos.x, newx), (self.pos.y, newy))
+            line = plt.Line2D((self.pos.x, newx), (self.pos.y, newy), color = self.color)
             self.axes.add_line(line)
         self.pos = Point(newx, newy)
         return self
