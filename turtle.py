@@ -29,7 +29,7 @@ class Turtle(object):
         self.pos = Point(newx, newy)
         return self
 
-    def backward(self, distance):
+    def back(self, distance):
         self.forward(-distance)
         return self
 
